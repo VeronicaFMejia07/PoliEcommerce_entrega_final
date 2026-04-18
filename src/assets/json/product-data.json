@@ -1,0 +1,134 @@
+ {
+    "1": {
+        "id": "1",
+        "title": "Portátil Gamer LENOVO LOQ",
+        "category": "Portátiles",
+        "price": "$ 4.299.000",
+        "summary": "Portátil gamer de Lenovo con procesador Intel Core i7, tarjeta gráfica NVIDIA GeForce RTX 3060, 16GB de RAM y almacenamiento SSD de 512GB.",
+        "description": "El Portátil Gamer LENOVO LOQ es la elección perfecta para los entusiastas de los videojuegos que buscan un rendimiento excepcional. Equipado con un potente procesador Intel Core i7 y una tarjeta gráfica NVIDIA GeForce RTX 3060, este portátil ofrece gráficos impresionantes y una experiencia de juego fluida. Con 16GB de RAM y almacenamiento SSD de 512GB, tendrás espacio suficiente para tus juegos favoritos y un rendimiento rápido. Su diseño elegante y su pantalla de alta resolución hacen que cada partida sea una experiencia visualmente impresionante.",
+        "image": { "src": "../../assets/img/pc2.png", "alt": "Portátil Gamer LENOVO LOQ" },
+        "includes": ["Portátil", "Mouse", "Teclado", "Cargador", "Licencia de Windows"],
+        "specs": [
+            { "name": "Procesador", "value": "Intel Core i7" },
+            { "name": "RAM", "value": "16GB" },
+            { "name": "Almacenamiento", "value": "SSD 512GB" },
+            { "name": "Tarjeta Gráfica", "value": "NVIDIA GeForce RTX 3060" }
+        ]
+    },
+    "2": {
+        "id": "2",
+        "title": "Portátil HP Probook G5",
+        "category": "Portátiles",
+        "price": "$ 2.299.000",
+        "summary": "Portátil HP Probook G5 con procesador Intel Core i5, 8GB de RAM, almacenamiento SSD de 256GB y pantalla de 15.6 pulgadas.",
+        "description": "El Portátil HP Probook G5 es una opción confiable para profesionales y estudiantes que buscan un rendimiento sólido en sus tareas diarias. Equipado con un procesador Intel Core i5, 8GB de RAM y almacenamiento SSD de 256GB, este portátil ofrece un rendimiento eficiente para aplicaciones de productividad, navegación web y multimedia. Su pantalla de 15.6 pulgadas proporciona una experiencia visual cómoda, mientras que su diseño duradero y características de seguridad hacen que sea una opción ideal para el trabajo y el estudio.",
+        "image": { "src": "../../assets/img/pc3.webp", "alt": "Portátil HP Probook G5" },
+        "includes": ["Portátil", "Licencia de Windows", "Cargador", "Bolso para portátil"],
+        "specs": [
+            { "name": "Procesador", "value": "Intel Core i5" },
+            { "name": "RAM", "value": "8GB" },
+            { "name": "Almacenamiento", "value": "SSD 256GB" },
+            { "name": "Pantalla", "value": "15.6 pulgadas" }
+        ]
+    },
+    "3": {
+        "id": "3",
+        "title": "Portátil ROG Zephyrus G14",
+        "category": "Portátiles",
+        "price": "$ 5.890.000",
+        "summary": "Portátil ROG Zephyrus G14 con procesador AMD Ryzen 9, tarjeta gráfica NVIDIA GeForce RTX 3070, 16GB de RAM y almacenamiento SSD de 1TB.",
+        "description": "El Portátil ROG Zephyrus G14 es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con un potente procesador AMD Ryzen 9 y una tarjeta gráfica NVIDIA GeForce RTX 3070, este portátil ofrece gráficos impresionantes y una experiencia de juego fluida. Con 16GB de RAM y almacenamiento SSD de 1TB, tendrás espacio suficiente para tus aplicaciones favoritas y un rendimiento rápido. Su pantalla de 14 pulgadas proporciona una experiencia visual cómoda, mientras que su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/pc.png", "alt": "Portátil ROG Zephyrus G14" },
+        "includes": ["Portátil", "Mouse", "Maletín", "Teclado", "Cargador","licencia de Windows"],
+        "specs": [
+            { "name": "Procesador", "value": "AMD Ryzen 9" },
+            { "name": "RAM", "value": "16GB" },
+            { "name": "Almacenamiento", "value": "SSD 1TB" },
+            { "name": "Pantalla", "value": "14 pulgadas" }
+        ]
+    },
+    "4": {
+        "id": "4",
+        "title": "iPhone 14 Plus 128GB",
+        "category": "Celulares",
+        "price": "$ 3.450.000",
+        "summary": "Smartphone de Apple con pantalla OLED de 6.7 pulgadas, procesador A16 Bionic.",
+        "description": "El iPhone 14 Plus es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con una pantalla OLED de 6.7 pulgadas y un procesador A16 Bionic, este smartphone ofrece una experiencia visual impresionante y un rendimiento rápido. Su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/cel.png", "alt": "iPhone 14 Plus 128GB" },
+        "includes": ["Smartphone", "Cargador", "Cable USB tipo C", "Manual de instrucciones"],
+        "specs": [
+            { "name": "Pantalla", "value": "6.7 pulgadas" },
+            { "name": "Procesador", "value": "A16 Bionic" }
+        ]
+    },
+    "5": {
+        "id": "5",
+        "title": "Xiaomi 15T Pro 256GB",
+        "category": "Celulares",
+        "price": "$ 3.450.000",
+        "summary": "Smartphone de Xiaomi con pantalla AMOLED, procesador Snapdragon 8 Gen 1.",
+        "description": "El Xiaomi 15T Pro es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con una pantalla AMOLED de 6.7 pulgadas y un procesador Snapdragon 8 Gen 1, este smartphone ofrece una experiencia visual impresionante y un rendimiento rápido. Su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/cel3.png", "alt": "Xiaomi 15T Pro 256GB" },
+        "includes": ["Smartphone", "Cargador", "Parlante Bluetooth", "Cable USB tipo C"],
+        "specs": [
+            { "name": "Pantalla", "value": "6.7 pulgadas" },
+            { "name": "Procesador", "value": "Snapdragon 8 Gen 1" }
+        ]
+    },
+    "6": {
+        "id": "6",
+        "title": "Samsung Galaxy S23 Ultra",
+        "category": "Celulares",
+        "price": "$ 4.100.000",
+        "summary": "Smartphone de Samsung con cámara de 200MP y batería de 5000mAh.",
+        "description": "El Samsung Galaxy S23 Ultra es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con una cámara de 200MP y una batería de 5000mAh, este smartphone ofrece una experiencia visual impresionante y un rendimiento rápido. Su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/cel2.webp", "alt": "Samsung Galaxy S23 Ultra" },
+        "includes": ["Smartphone", "Cargador", "estuche", "Manual de instrucciones"],
+        "specs": [
+            { "name": "Pantalla", "value": "6.7 pulgadas" },
+            { "name": "Procesador", "value": "Snapdragon 8 Gen 1" }
+        ]
+    },
+    "7": {
+        "id": "7",
+        "title": "Smartwatch M9 Ultra Pro",
+        "category": "Relojes",
+        "price": "$ 389.000",
+        "summary": "Reloj inteligente con monitoreo de salud y resistencia al agua.",
+        "description": "El Smartwatch M9 Ultra Pro es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con monitoreo de salud y resistencia al agua, este reloj ofrece una experiencia cómoda y funcional. Su pantalla de 1.4 pulgadas proporciona una visión clara de las funciones, mientras que su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/relog.png", "alt": "Smartwatch M9 Ultra Pro" },
+        "includes": ["Reloj", "Cargador", "Manual de instrucciones"],
+        "specs": [
+            { "name": "Pantalla", "value": "1.4 pulgadas" },
+            { "name": "Resistencia al agua", "value": "5 ATM" }
+        ]
+    },
+    "8": {
+        "id": "8",
+        "title": "Smartwatch Xiaomi Redmi 5",
+        "category": "Relojes",
+        "price": "$ 189.000",
+        "summary": "Reloj inteligente de Xiaomi con pantalla AMOLED.",
+        "description": "El Smartwatch Xiaomi Redmi 5 es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con una pantalla AMOLED de 1.4 pulgadas y resistencia al agua, este reloj ofrece una experiencia cómoda y funcional. Su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/reloj3.webp", "alt": "Smartwatch Xiaomi Redmi 5" },
+        "includes": ["Reloj", "Cargador tipo C", "Manual de instrucciones"],
+        "specs": [
+            { "name": "Pantalla", "value": "1.4 pulgadas" },
+            { "name": "Resistencia al agua", "value": "5 ATM" }
+        ]
+    },
+    "9": {
+        "id": "9",
+        "title": "Apple Watch Series 8",
+        "category": "Relojes",
+        "price": "$ 1.850.000",
+        "summary": "Reloj inteligente de Apple con funciones avanzadas de salud.",
+        "description": "El Apple Watch Series 8 es una opción premium para usuarios que buscan un rendimiento excepcional en un diseño compacto. Equipado con funciones avanzadas de salud y resistencia al agua, este reloj ofrece una experiencia cómoda y funcional. Su pantalla de 1.4 pulgadas proporciona una visión clara de las funciones, mientras que su diseño elegante y características avanzadas hacen que sea una opción ideal para profesionales y entusiastas.",
+        "image": { "src": "../../assets/img/reloj2.png", "alt": "Apple Watch Series 8" },
+        "includes": ["Reloj", "Cargador", "Manual de instrucciones"],
+        "specs": [
+            { "name": "Pantalla", "value": "1.4 pulgadas" },
+            { "name": "Resistencia al agua", "value": "5 ATM" }
+        ]
+    }
+}
