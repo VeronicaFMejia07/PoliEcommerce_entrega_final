@@ -1,27 +1,41 @@
-# Poliecommerce
+# 🛒PoliEcommerce
+**PoliEcommerce** es una plataforma de catálogo tecnológico desarrollada como proyecto para la asignatura de Frontend. La aplicación permite explorar productos como portátiles, smartphones y smartwatches, gestionando la navegación mediante rutas dinámicas y carga optimizada de componentes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
-## Development server
+##  Tecnologías Utilizadas
+- **Framework:** Angular 16.2.16
+- **Estilos:** Tailwind CSS
+- **Lenguaje:** TypeScript
+- **Gestión de Datos:** JSON nativo.
+- **Gestión de Estado:** LocalStorage para persistencia de datos y favoritos.
+- **API:** Web3Forms, para la gestión y envío de correos desde el formulario de contacto.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requisitos Previos
+Para asegurar la estabilidad del proyecto y evitar conflictos con las dependencias de Angular 16, se recomienda utilizar la siguiente versión de entorno:
 
-## Code scaffolding
+- **Node.js:** v18.x (LTS) - *Recomendado* (Compatible hasta v20.x).
+- **NPM:** v9.x o superior.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instalación y Uso
 
-## Build
+**1.  Clonar el repositorio**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+git clone https://github.com/VeronicaFMejia07/PoliEcommerce_entrega_final.git
 
-## Running unit tests
+cd PoliEcommerce_entrega_final
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+**2. Instalar dependencias**
+```bash
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**3. Ejecutar servidor de desarrollo**
+```bash
+npm start
+```
 
-## Further help
+> Abre **http://localhost:4200/** en tu navegador para ver la aplicación.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
