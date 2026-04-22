@@ -13,7 +13,7 @@
 <section class="py-8" aria-labelledby="catalog-title">
   <div class="mx-auto w-full max-w-container px-4 lg:px-6">
     <nav class="mb-6 text-[0.8rem] text-[#666]" aria-label="Miga de pan">
-      <a class="transition-colors hover:text-brand-cyan" routerLink="home"
+      <a class="transition-colors hover:text-brand-cyan" routerLink="/home"
         >Inicio</a
       >
       <span class="mx-2 text-[#bbb]" aria-hidden="true">/</span>
@@ -55,25 +55,26 @@
             ></div>
             <ul class="space-y-2 text-[0.92rem] font-medium text-[#111827]">
               <li>
-                <a
-                  class="block rounded-md px-2 py-1.5 transition-colors hover:bg-surface-muted hover:text-navy"
-                  href="#grid-catalog"
-                  >Portátiles</a
+                <button
+                  type="button"
+                  class="w-full rounded-md px-2 py-1.5 text-left transition-colors hover:bg-surface-muted hover:text-navy"
+                  [class.bg-surface-muted]="selectedCategory() === null"
+                  [class.text-navy]="selectedCategory() === null"
+                  (click)="selectCategory(null)"
                 >
+                  Todas
+                </button>
               </li>
-              <li>
-                <a
-                  class="block rounded-md px-2 py-1.5 transition-colors hover:bg-surface-muted hover:text-navy"
-                  href="#grid-catalog"
-                  >Celulares</a
+              <li *ngFor="let cat of categories">
+                <button
+                  type="button"
+                  class="w-full rounded-md px-2 py-1.5 text-left transition-colors hover:bg-surface-muted hover:text-navy"
+                  [class.bg-surface-muted]="isCategoryActive(cat)"
+                  [class.text-navy]="isCategoryActive(cat)"
+                  (click)="selectCategory(cat)"
                 >
-              </li>
-              <li>
-                <a
-                  class="block rounded-md px-2 py-1.5 transition-colors hover:bg-surface-muted hover:text-navy"
-                  href="#grid-catalog"
-                  >Relojes</a
-                >
+                  {{ cat }}
+                </button>
               </li>
             </ul>
           </section>
@@ -93,23 +94,30 @@
             ></div>
 
             <div>
-              <p class="mb-4 text-[1rem] font-medium text-[#111827]">Precio</p>
+              <p class="mb-2 text-[1rem] font-medium text-[#111827]">
+                Precio máximo
+              </p>
 
-              <label class="sr-only" for="price-range">Precio</label>
-              <span id="price-value">$ 10.000.000</span>
+              <label class="sr-only" for="price-range">Precio máximo</label>
+              <p class="mb-2 text-[0.85rem] text-[#555]">
+                Hasta <span id="price-value">{{ maxPriceLabel() }}</span>
+              </p>
               <input
                 id="price-range"
                 type="range"
                 min="50000"
                 max="10000000"
                 step="50000"
-                value="10000000"
+                [value]="maxPrice()"
+                (input)="onMaxPriceInput($event)"
                 class="pe-range"
               />
 
               <button
+                type="button"
                 id="btn-clean"
-                class="mt-4 w-full bg-[#002d56] text-white py-2 rounded"
+                class="mt-4 w-full rounded bg-[#002d56] py-2 text-white"
+                (click)="clearFilters()"
               >
                 Limpiar filtros
               </button>
@@ -122,10 +130,45 @@
         id="grid-catalog"
         class="grid flex-1 grid-cols-1 gap-2.5 sm:grid-cols-2 xl:grid-cols-3"
       >
-        <article
-          *ngFor="let item of listProducts"
-          class="flex min-h-full flex-col items-center rounded-[12px] bg-[#e8e8e8] px-[10px] pb-2.5 pt-2.5 text-center shadow-[0_2px_12px_rgba(0,0,0,0.1)] ring-1 ring-black/[0.06]"
+        <p
+          *ngIf="filteredProducts().length === 0"
+          class="col-span-full rounded-lg bg-white p-6 text-center text-[0.95rem] text-[#555] shadow-sm ring-1 ring-black/[0.06]"
+          role="status"
         >
+          No hay productos con los filtros seleccionados. Prueba otra categoría o
+          sube el precio máximo.
+        </p>
+
+        <article
+          *ngFor="let item of filteredProducts()"
+          class="relative flex min-h-full flex-col items-center rounded-[12px] bg-[#e8e8e8] px-[10px] pb-2.5 pt-2.5 text-center shadow-[0_2px_12px_rgba(0,0,0,0.1)] ring-1 ring-black/[0.06]"
+        >
+          <button
+            type="button"
+            class="absolute right-2 top-2 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-navy shadow-sm ring-1 ring-black/[0.08] transition-colors hover:bg-white"
+            [attr.aria-pressed]="favorites.has(item.id)"
+            [attr.aria-label]="
+              favorites.has(item.id)
+                ? 'Quitar de favoritos'
+                : 'Añadir a favoritos'
+            "
+            (click)="toggleFavorite($event, item.id)"
+          >
+            <svg
+              class="h-[20px] w-[20px]"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                [attr.fill]="favorites.has(item.id) ? 'currentColor' : 'none'"
+                [attr.stroke]="favorites.has(item.id) ? 'none' : 'currentColor'"
+                stroke-width="1.5"
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              />
+            </svg>
+          </button>
           <div
             class="mb-2.5 flex min-h-[180px] flex-1 items-center justify-center"
           >
@@ -145,7 +188,7 @@
           </p>
           <a
             class="mt-auto inline-flex w-full max-w-[200px] items-center justify-center rounded-md bg-navy px-[10px] py-2.5 text-center text-[0.8rem] font-bold tracking-wide text-white transition-opacity hover:opacity-[0.92]"
-            [routerLink]="['/product', item.id, item.id]"
+            [routerLink]="['/product', item.id]"
             >Ver detalle</a
           >
         </article>

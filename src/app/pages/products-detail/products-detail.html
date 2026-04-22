@@ -1,1 +1,98 @@
-<p>products-detail works!</p>,
+<ng-container *ngIf="product() as p; else notFound">
+  <section class="border-b border-black/[0.06] bg-surface-muted py-6">
+    <div class="mx-auto w-full max-w-container px-4 lg:px-6">
+      <nav class="mb-4 text-[0.8rem] text-[#666]" aria-label="Miga de pan">
+        <a class="transition-colors hover:text-brand-cyan" routerLink="/home">Inicio</a>
+        <span class="mx-2 text-[#bbb]" aria-hidden="true">/</span>
+        <a class="transition-colors hover:text-brand-cyan" routerLink="/products">Productos</a>
+        <span class="mx-2 text-[#bbb]" aria-hidden="true">/</span>
+        <span class="font-medium text-[#1a1a1a]">{{ p.title }}</span>
+      </nav>
+    </div>
+  </section>
+
+  <section class="py-8" aria-labelledby="product-detail-title">
+    <div class="mx-auto grid w-full max-w-container gap-8 px-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)] lg:items-start lg:px-6">
+      <div class="relative rounded-xl bg-[#e8e8e8] p-6 shadow-[0_2px_14px_rgba(0,0,0,0.08)] ring-1 ring-black/[0.06]">
+        <button
+          type="button"
+          class="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white text-navy shadow-sm ring-1 ring-black/[0.08] transition-colors hover:bg-surface-muted"
+          [attr.aria-pressed]="favorites.has(p.id)"
+          [attr.aria-label]="favorites.has(p.id) ? 'Quitar de favoritos' : 'Añadir a favoritos'"
+          (click)="toggleFavorite()"
+        >
+          <svg class="h-[22px] w-[22px]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              [attr.fill]="favorites.has(p.id) ? 'currentColor' : 'none'"
+              [attr.stroke]="favorites.has(p.id) ? 'none' : 'currentColor'"
+              stroke-width="1.5"
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+            />
+          </svg>
+        </button>
+        <div class="flex min-h-[280px] items-center justify-center pt-8">
+          <img
+            class="max-h-[360px] w-full max-w-md object-contain"
+            [src]="p.image.src"
+            [alt]="p.image.alt"
+            width="640"
+            height="480"
+          />
+        </div>
+      </div>
+
+      <div>
+        <p class="mb-2 text-[0.85rem] font-semibold uppercase tracking-wide text-brand-cyan">
+          {{ p.category }}
+        </p>
+        <h1 id="product-detail-title" class="mb-3 text-[clamp(1.25rem,3vw,1.75rem)] font-bold leading-snug text-[#1a1a1a]">
+          {{ p.title }}
+        </h1>
+        <p class="mb-4 text-[1.35rem] font-bold text-navy">{{ p.price }}</p>
+        <p class="mb-6 text-[0.95rem] leading-relaxed text-[#444]">{{ p.summary }}</p>
+
+        <h2 class="mb-2 text-[1rem] font-bold text-navy">Descripción</h2>
+        <p class="mb-6 text-[0.92rem] leading-relaxed text-[#555]">{{ p.description }}</p>
+
+        <div class="mb-6 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-lg bg-white p-4 shadow-sm ring-1 ring-black/[0.06]">
+            <h3 class="mb-2 text-[0.9rem] font-bold text-navy">Incluye</h3>
+            <ul class="list-inside list-disc space-y-1 text-[0.88rem] text-[#444]">
+              <li *ngFor="let line of p.includes">{{ line }}</li>
+            </ul>
+          </div>
+          <div class="rounded-lg bg-white p-4 shadow-sm ring-1 ring-black/[0.06]">
+            <h3 class="mb-2 text-[0.9rem] font-bold text-navy">Especificaciones</h3>
+            <dl class="space-y-2 text-[0.88rem]">
+              <div *ngFor="let spec of p.specs" class="flex justify-between gap-4 border-b border-black/[0.06] pb-2 last:border-0 last:pb-0">
+                <dt class="font-medium text-[#333]">{{ spec.name }}</dt>
+                <dd class="text-right text-[#555]">{{ spec.value }}</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <a
+          routerLink="/products"
+          class="inline-flex items-center justify-center rounded-md bg-navy px-5 py-2.5 text-[0.85rem] font-bold tracking-wide text-white transition-opacity hover:opacity-[0.92]"
+        >
+          ← Volver al catálogo
+        </a>
+      </div>
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #notFound>
+  <section class="py-16">
+    <div class="mx-auto max-w-container px-4 text-center lg:px-6">
+      <h1 class="mb-3 text-xl font-bold text-navy">Producto no encontrado</h1>
+      <p class="mb-6 text-[0.95rem] text-[#555]">
+        El identificador no coincide con ningún artículo del catálogo.
+      </p>
+      <a routerLink="/products" class="inline-flex rounded-md bg-navy px-5 py-2.5 text-[0.85rem] font-bold text-white">
+        Ir a productos
+      </a>
+    </div>
+  </section>
+</ng-template>
